@@ -68,10 +68,15 @@ html{
 
 body{
 	font-family: 'Inter', sans-serif;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 	background-color: #fff;
 	font-weight: 400;
 	color: rgba(30, 30, 30, 1);
 	zoom: 0.8;
+	
 }
 .no-scroll{
 	overflow: hidden;
@@ -333,6 +338,7 @@ svg{
 .footer__top.container{
 	padding-left: 24px;
 	padding-right: 24px;
+	color: #fff;
 }
 .values__content{
 	min-height: 760px;
@@ -436,33 +442,44 @@ svg{
 .all-contacts__item__list{
 	display: block;
 }
-.header__phone{
+.phone{
 	position: relative;
+	cursor: pointer;
 }
-.header__phone:hover .header__phone-drop{
-	display: block;
-}
-.header__phone-drop{
+
+.phone-drop{
 	position: absolute;
 	top: calc(100% + 15px);
 	right: -69px;
 	z-index: 10;
 	background-color: #fff;
 	width: max-content;
-	padding: 30px 30px 0 30px;
-	box-shadow: 0px -3px 80.5px 30px #0000000A;
+	padding: 24px;
+	box-shadow: 25px 9px 20.5px 0px #0000000A;
 	display: none;
+	color: #000;
+	font-size: 16px;
 }
-.header__phone-drop a{
+.phone-drop div{
+	border-bottom: 1px solid #C5C5C5;
+	padding-bottom: 12px;
+	margin-bottom: 12px;
+}
+.phone-drop div:last-child{
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+.phone-drop a{
+	display: block;
 	font-size: 20px;
 	font-weight: 500;
 	line-height: 140%;
 	letter-spacing: -0.015em;
 	color: #EB0029;
 	margin-top: 10px;
-	margin-bottom: 27px;
 }
-.header__phone::after{
+.phone::after{
 	content: '';
 	display: block;
 	width: 40px;
@@ -473,7 +490,10 @@ svg{
 	left: 0;
 }
 	
-
+.footer .phone-drop{
+	right: unset;
+	left: 0;
+}
 @media (max-width: 1400px){
 	.header__nav ul {
         gap: 30px;
@@ -524,6 +544,12 @@ svg{
 	.pagination-container{
 		transform: scale(.7);
 		margin: 10px auto;
+	}
+}
+
+@media (max-width: 650px) {
+	.footer .phone-drop{
+		left: -30px;
 	}
 }
 @media (max-width: 576px) {

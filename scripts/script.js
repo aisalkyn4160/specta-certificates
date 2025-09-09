@@ -1,16 +1,21 @@
 document.addEventListener('DOMContentLoaded', function() {
-  const button = document.getElementById('language-btn');
-  const buttonText = button.querySelector('span');
-  const dropdown = document.getElementById('language-dropdown');
-  const option = document.querySelector('.language-option');
+  const buttons = document.querySelectorAll('.language-btn');
+  
+
+  
 
   // Показать/скрыть дропдаун при клике на кнопку
+buttons.forEach(button => {
   button.addEventListener('click', function() {
+    console.log('click');
+    const buttonText = button.querySelector('span');
+    const dropdown = button.nextElementSibling;
+    console.log(dropdown);
     dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-  });
 
-  // Обработка выбора языка
-  option.addEventListener('click', function(e) {
+    const option = dropdown.querySelector('.language-option');
+
+    option.addEventListener('click', function(e) {
     e.preventDefault();
     dropdown.style.display = 'none';
     if (buttonText.textContent === 'RU') {
@@ -22,6 +27,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
   });
+  });
+});
+
+  // Обработка выбора языка
+
 
   // Закрыть дропдаун при клике вне его
   window.addEventListener('click', function(e) {
@@ -71,11 +81,12 @@ hasSubmenu.forEach((item, index) => {
 });
 
 
+// Телефон
 $(function () {
-    $('.header__phone .phone').click(function (e) {
+    $('.phone-icon').click(function (e) {
         e.preventDefault();
         $(this).toggleClass('active');
-        $(this).siblings('.header__phone-drop').slideToggle();
+        $(this).siblings('.phone-drop').slideToggle();
     })
 })
  // Инициализация Fancybox v5

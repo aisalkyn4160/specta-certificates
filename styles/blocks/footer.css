@@ -12,11 +12,6 @@
   display: flex;
   align-items: center;
 }
-.footer .contacts a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
 .footer .contacts .mail {
   padding: 0 20px;
   border-right: 1px solid rgba(255, 255, 255, 0.1);
