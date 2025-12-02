@@ -468,15 +468,36 @@
                 </div>
             </div>
         </footer>
-    </div>
 
+        <div id="cookie-banner" class="cookie-banner">
+            <p> Сайт использует файлы cookie для корректной работы и улучшения пользовательского опыта. Собирая и обрабатывая cookie, мы руководствуемся <a href="#">Политикой конфиденциальности</a>  и  <br><a href="#">Пользовательским соглашением</a>. Чтобы отказаться от сбора и обработки, отключите cookie в настройках вашего браузера</p>
+            <button id="accept-cookies" class="btn">Хорошо, понятно</button>
+        </div>
+
+    </div>
+    <script>
+   // cookies
+            document.addEventListener("DOMContentLoaded", function() {
+                const cookieBanner = document.getElementById("cookie-banner");
+                const acceptButton = document.getElementById("accept-cookies");
+
+
+                if (!localStorage.getItem("cookiesAccepted")) {
+                    cookieBanner.style.display = "block";
+                }
+
+
+                acceptButton.addEventListener("click", function() {
+                    localStorage.setItem("cookiesAccepted", "true");
+                    cookieBanner.style.display = "none";
+                });
+            });
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script>
-   
-    </script>
+    
     <script src="scripts/script.js"></script>
 </body>
 </html>

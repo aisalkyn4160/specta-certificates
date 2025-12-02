@@ -494,6 +494,37 @@ svg{
 	right: unset;
 	left: 0;
 }
+.cookie-banner {
+    position: fixed;
+    bottom: 20px;
+    right: 0;
+    max-width: 600px;
+    background: #FFFFFF;
+    padding: 20px;
+    display: none;
+    margin: 25px;
+    border-radius: 8px;
+    box-shadow: 1px 4px 4px 0px rgba(0, 0, 0, 0.13);
+    z-index: 1000;
+}
+.cookie-banner p{
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 140%;
+	text-align: left;
+}
+.cookie-banner p a{
+	text-decoration: underline;
+	text-decoration-style: solid;
+	text-decoration-thickness: 0%;
+	text-decoration-skip-ink: auto;
+	color:#EB0029;
+}
+.cookie-banner .btn{
+	margin-top: 20px;
+	padding: 12px 28px 14px;
+	letter-spacing: -.01em;
+}
 @media (max-width: 1400px){
 	.header__nav ul {
         gap: 30px;
